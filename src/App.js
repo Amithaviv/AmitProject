@@ -18,7 +18,25 @@ function App() {
         <img id="cartImg" type="button" src="https://static.thenounproject.com/png/1138102-200.png" alt="Cart Img"></img>
         </div>
 
-       
+        <nav id="navbar" class="navbar navbar-expand-sm bg-info navbar-dark">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Contact us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          
           <div id="card">
           <div className="card">
             <img src="https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?b=1&k=20&m=517109442&s=170667a&w=0&h=3XSUu_Xhzww9oo2h9HHBevZHDLDkRvn8py8r86q6ers="

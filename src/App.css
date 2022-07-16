@@ -40,7 +40,6 @@
 }
 
 .firstLine{
-  margin-top: 10px;
   display: flex;
   column-gap: 20px;
   align-items: center;
