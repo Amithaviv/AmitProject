@@ -1,7 +1,9 @@
 import './App.css';
 import Login from './Login';
+import React, { useState } from 'react';
 
 function App() {
+  const [cardIsShown, setCardIsShown] = useState(true);
   return (
     <div className="App">
     <title>Item page</title>
@@ -13,7 +15,7 @@ function App() {
             <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
             <button type="button" className="btn btn-outline-primary">search</button>
           </div>
-        <button type="button" onClick={<Login></Login>} id="btnLogin">Register/Login</button>
+        <button type="button" onClick={() => {<Login></Login>; setCardIsShown(false);}} id="btnLogin">Register/Login</button>
         <img type="button" id="accountImg" src="https://www.pikpng.com/pngl/b/154-1540525_male-user-filled-icon-my-profile-icon-png.png" alt="Account Img"></img>
         <img id="cartImg" type="button" src="https://static.thenounproject.com/png/1138102-200.png" alt="Cart Img"></img>
         </div>
@@ -37,7 +39,7 @@ function App() {
             </div>
           </nav>
           
-          <div id="card">
+          {cardIsShown && <div id="card">
           <div className="card">
             <img src="https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?b=1&k=20&m=517109442&s=170667a&w=0&h=3XSUu_Xhzww9oo2h9HHBevZHDLDkRvn8py8r86q6ers="
             className="card-img-top" alt="chocolate chip cookie"></img>
@@ -49,7 +51,7 @@ function App() {
                 src="https://static.thenounproject.com/png/1138102-200.png" alt="Price Button"></img></button>
             </div>
           </div>
-        </div>
+        </div>}
     </div>
   );
 }
