@@ -35,20 +35,6 @@ function Login() {
           },
           errors: []
         },
-        course: {
-          value: '',
-          validations: {
-            required: true
-          },
-          errors: []
-        },
-        gender: {
-          value: '',
-          validations: {
-            required: true
-          },
-          errors: []
-        },
       })
     
       function validtateData({target: {name, value}}){
@@ -58,21 +44,29 @@ function Login() {
         setFormData({...formData})
       }
 
-  const onSubmit = e => {
-    e.preventDefault()
+      const onSubmit = e => {
+        e.preventDefault()
+        //validate all inputs
+        let tryError = 0
+        for (const name in formData){
+          let targetKey = formData[name]
+          targetKey.errors =  validate(name, targetKey.value, targetKey.validations)
+          if (targetKey.errors.length>0){
+            tryError += 1
+          }
+        }
+        console.log(tryError)
+          if (tryError === 0){
+            alert("Login Confirmed");
+          }
+        setFormData({...formData})
+      }
 
-    //validate all inputs
-    for (const name in formData){
-      let targetKey = formData[name]
-      targetKey.errors =  validate(name, targetKey.value, targetKey.validations)
-    }
-    setFormData({...formData})
-  }
-
+  
   return (
     <div className="App">
       <header className="App-header">
-        <Form onSubmit={onSubmit}>
+          <Form id="loginForm" onSubmit={onSubmit}>
           <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="validationCustomUsername">
               <Form.Label className="label">Username</Form.Label>
