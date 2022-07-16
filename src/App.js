@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './Login';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
             <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
             <button type="button" className="btn btn-outline-primary">search</button>
           </div>
-        <button type="button" id="btnLogin">Register/Login</button>
+        <button type="button" onClick={<Login></Login>} id="btnLogin">Register/Login</button>
         <img type="button" id="accountImg" src="https://www.pikpng.com/pngl/b/154-1540525_male-user-filled-icon-my-profile-icon-png.png" alt="Account Img"></img>
         <img id="cartImg" type="button" src="https://static.thenounproject.com/png/1138102-200.png" alt="Cart Img"></img>
         </div>
