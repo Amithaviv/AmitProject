@@ -10,7 +10,6 @@ import ErrorMessages from "./ErrorMessages";
 import validate from "./Validations";
 
 function Login() {
-    
       const [formData, setFormData] = useState({
         username: {
           value: '',
