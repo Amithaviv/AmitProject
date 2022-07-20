@@ -1,4 +1,4 @@
-import './Home.css';
+import './App.css';
 import Login from './Login';
 import React, { useState } from 'react';
 
@@ -26,7 +26,7 @@ function App() {
             <div class="container-fluid">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/.../Home.js/">Home</a>
+                  <a class="nav-link active" href="/.../App.js/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="/.../App.js/">Categories</a>
@@ -42,35 +42,19 @@ function App() {
           </nav>
           
           {loginIsShown && <Login></Login>}
-          {cardIsShown && <div id="cards" className="row row-cols-1 row-cols-sm-6 g-4">
-            <div type="button" className="col">
-              <div className="card h-100">
-                <img src="images\3a61cda0-55c9-4b5a-9d76-03041730172a.jpg" 
-                className="card-img-top" alt="Chocolate Chip Cookie"></img>
-                <div className="card-body"><h5 className="card-title">Chocolate Chip Cookies<br></br><br></br>price: 5$</h5>
-                </div>
-
-              </div>
+          {cardIsShown && <div id="card">
+          <div className="card">
+            <img src="https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?b=1&k=20&m=517109442&s=170667a&w=0&h=3XSUu_Xhzww9oo2h9HHBevZHDLDkRvn8py8r86q6ers="
+            className="card-img-top" alt="chocolate chip cookie"></img>
+            <div className="card-body">
+              <h5 className="card-title">Chocolate Chip Cookies</h5>
+              <p className="card-text">chocolate chip cookies taste just like home - crisp on the edges, soft and chewy in the middle, and studded with milk and dark chocolate chips</p>
+              <p id="price">Price: 5$</p>
+              <button type="button" id="priceBtn">Add to cart <img id="cartImg"
+                src="https://static.thenounproject.com/png/1138102-200.png" alt="Price Button"></img></button>
             </div>
-            <div type="button" className="col">
-              <div className="card h-100">
-                <img src="https://www.recipetineats.com/wp-content/uploads/2020/03/Brownies_0-SQ.jpg" 
-                className="card-img-top" alt="Brownies"></img>
-                <div className="card-body">
-                  <h5 className="card-title">Brownies<br></br><br></br><br></br>price: 15$</h5>
-                </div>
-              </div>
-            </div>
-            <div type="button" className="col">
-              <div className="card h-100" id="imgHeight">
-                <img src="images\8ce7f933-3194-48e0-b47d-96ea55ecfdbd.jpg" 
-                className="card-img-top" alt="Macarons"></img>
-                <div className="card-body">
-                  <h5 className="card-title">Macarons<br></br><br></br><br></br>price: 10$</h5>
-                </div>
-              </div>
-            </div>
-    </div>}
+          </div>
+        </div>}
     </div>
   );
 }
