@@ -64,7 +64,7 @@ function Login() {
 
   
   return (
-    <div className="App">
+      <div className="App">
       <header className="App-header">
           <Form id="loginForm" onSubmit={onSubmit}>
           <Row className="mb-3">
@@ -99,13 +99,13 @@ function Login() {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="15" controlId="validationCustom03">
-              <Form.Label className="label">Adress</Form.Label>
+              <Form.Label className="label">password</Form.Label>
               <InputGroup>
-              <InputGroup.Text id="inputGroupPrepend"><img alt="icon" id="icon" src="images\icons8-buildings-64.png"></img></InputGroup.Text>
+              <InputGroup.Text id="inputGroupPrepend"><img alt="icon" id="icon" src="images\icons8-lock-50.png"></img></InputGroup.Text>
               <Form.Control
                 type="text"
                 name="adress" 
-                placeholder="street,number,city,zip"                  
+                placeholder="password"                  
                 defaultValue={formData.adress.value}
                 onBlur={validtateData}/>
               </InputGroup>
@@ -116,6 +116,9 @@ function Login() {
             <div id="submit" className="d-grid gap-2">
           <Button type="submit">Login</Button>
           </div>
+          <div id="register">
+        <Button variant="info">Register here</Button>
+        </div>
         </Form>
       </header>
     </div>
