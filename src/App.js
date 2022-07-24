@@ -1,10 +1,13 @@
 import './Home.css';
 import Login from './Login';
+import About from './About';
 import React, { useState } from 'react';
 
 function App() {
   const [cardIsShown, setCardIsShown] = useState(true);
   const [loginIsShown, setLoginIsShown] = useState(false);
+  const [aboutIsShown, setAboutIsShown] = useState(false);
+
 
   return (
     <div className="App">
@@ -35,12 +38,13 @@ function App() {
                   <a class="nav-link active" href="/.../App.js/">Contact us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/.../App.js/">About</a>
+                  <div type='button' class="nav-link active" onClick={() => {setCardIsShown(false); setAboutIsShown(true);}}>About</div>
                 </li>
               </ul>
             </div>
           </nav>
           
+          {aboutIsShown && <About></About>}
           {loginIsShown && <Login></Login>}
           {cardIsShown && <div id="cards" className="row row-cols-1 row-cols-sm-6 g-4">
             <div type="button" className="col">
