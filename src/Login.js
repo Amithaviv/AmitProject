@@ -65,7 +65,7 @@ function Login() {
   
   return (
       <div className="App">
-      <header className="App-header">
+      <header className="App-head">
           <Form id="loginForm" onSubmit={onSubmit}>
           <Row className="mb-3">
           <Form.Group as={Col} md="6" controlId="validationCustomUsername">
