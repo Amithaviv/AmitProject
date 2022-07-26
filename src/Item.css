@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(https://c4.wallpaperflare.com/wallpaper/903/513/251/food-croissant-breakfast-strawberry-wallpaper-preview.jpg);
-  background-size: cover;
 }
 
 .App-logo {
@@ -14,100 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.firstLine{
-  display: flex;
-  column-gap: 20px;
-  align-items: center;
-  justify-content: right;
-}
-#search{
-  margin-right: 250px;
-  width: 400px;
-}
-#navbar{
-  margin-top: 10px;
-}
-#logo {
-  margin-right: auto;
-  width: 100px;
-}
 #card{
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  font-family: Comic Sans MS;
-
-}
-#accountImg {
-  width: 50px;
-  height: 50px;
-}
-
-#cartImg {
-  width: 50px;
-  height: 50px;
-  align-self: right;
-  margin-right: 20px;
-}
-
-#btnLogin {
-  background-color: rgb(19, 218, 232);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-family: Comic Sans MS;
-}
-#shopImg {
-  object-fit: cover;
-  width: 150px;
-  height: 100px;
-
-}
-#price{
-  font-weight: 700;
-  font-size: 20px;
-}
-#cartImg{
-  width: 40px;
-}
-#priceBtn {
-  font-size: 25px;
-  font-weight: 700;
-  margin-right: 20px;
-  background-color: rgba(7, 137, 192, 0.856);
-  border: none;
-  color: white;
-  padding: 15px 25px;
-  text-align: center;
-  border-radius: 5%;
-  width: 250px;
-}
-.card{
-  width: 18rem
-}
+  margin-left: auto;
+  margin-right: auto;
+} 
