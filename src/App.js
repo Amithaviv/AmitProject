@@ -1,12 +1,14 @@
 import './Home.css';
 import Login from './Login';
 import About from './About';
+import Item from  './Item'
 import React, { useState } from 'react';
 
 function App() {
   const [cardIsShown, setCardIsShown] = useState(true);
   const [loginIsShown, setLoginIsShown] = useState(false);
   const [aboutIsShown, setAboutIsShown] = useState(false);
+  const [itemIsShown, setItemIsShown] = useState(false);
 
 
   return (
@@ -20,7 +22,7 @@ function App() {
             <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
             <button type="button" className="btn btn-outline-primary">search</button>
           </div>
-        <button type="button" onClick={() => {setCardIsShown(false); setLoginIsShown(true);setAboutIsShown(false)}} id="btnLogin">Register/Login</button>
+        <button type="button" onClick={() => {setCardIsShown(false); setLoginIsShown(true);setAboutIsShown(false);setItemIsShown(false)}} id="btnLogin">Register/Login</button>
         <img type="button" id="accountImg" src="https://www.pikpng.com/pngl/b/154-1540525_male-user-filled-icon-my-profile-icon-png.png" alt="Account Img"></img>
         <img id="cartImg" type="button" src="https://static.thenounproject.com/png/1138102-200.png" alt="Cart Img"></img>
         </div>
@@ -44,10 +46,11 @@ function App() {
             </div>
           </nav>
           
+          {itemIsShown && <Item></Item>}
           {aboutIsShown && <About></About>}
           {loginIsShown && <Login></Login>}
           {cardIsShown && <div id="cards" className="row row-cols-1 row-cols-sm-6 g-4">
-            <div type="button" className="col">
+            <div type="button" onClick={() => {setCardIsShown(false); setItemIsShown(true);}} className="col">
               <div className="card h-100"  id="imgHeight">
                 <img src="images\3a61cda0-55c9-4b5a-9d76-03041730172a.jpg" 
                 className="card-img-top" alt="Chocolate Chip Cookie"></img>
