@@ -41,7 +41,7 @@ function App() {
                   <a class="nav-link active" href="/.../App.js/">Contact us</a>
                 </li>
                 <li class="nav-item">
-                  <div type='button' class="nav-link active" onClick={() => {setCardIsShown(false); setAboutIsShown(true);}}>About</div>
+                  <div type='button' class="nav-link active" onClick={() => {setItemIsShown(false);setCardIsShown(false); setAboutIsShown(true);}}>About</div>
                 </li>
               </ul>
             </div>
