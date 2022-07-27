@@ -1,7 +1,8 @@
 import './Home.css';
-import Login from './Login';
-import About from './About';
-import Item from  './Item'
+import Item from './components/item/Item'
+import Login from './components/login/Login';
+import About from './components/about/About';
+
 import React, { useState } from 'react';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         src="https://www.freepngimg.com/thumb/cake/59157-vector-logo-bakery-bread-cupcake-free-download-png-hq.png" alt="Logo"></img>
         <div id="search" className="input-group">
             <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" className="btn btn-outline-primary">search</button>
+            <button type="button" className="btn btn-outline-primary">Search</button>
           </div>
         <button type="button" onClick={() => {setCardIsShown(false); setLoginIsShown(true);setAboutIsShown(false);setItemIsShown(false)}} id="btnLogin">Register/Login</button>
         <img type="button" id="accountImg" src="https://www.pikpng.com/pngl/b/154-1540525_male-user-filled-icon-my-profile-icon-png.png" alt="Account Img"></img>

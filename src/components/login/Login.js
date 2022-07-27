@@ -6,8 +6,8 @@ import Col from "react-bootstrap/Col";
 import { InputGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react';
-import ErrorMessages from "./ErrorMessages";
-import validate from "./Validations";
+import ErrorMessages from "../../common/ErrorMessages";
+import validate from "../../common/Validations";
 
 function Login() {
       const [formData, setFormData] = useState({
