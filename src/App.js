@@ -1,6 +1,6 @@
 import './Home.css';
-import Login from './Login';
-import About from './About';
+import Login from './components/login/Login';
+import About from './components/about/About';
 import React, { useState } from 'react';
 
 function App() {
