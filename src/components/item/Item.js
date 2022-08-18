@@ -1,13 +1,10 @@
 import './Item.css';
-
-
 import React, { useState } from 'react';
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
-function App() {
+function Item() {
   return (
     <div className="App">
     <title>Item page</title>
@@ -25,7 +22,7 @@ function App() {
   );
 }
 
-export default App;
+export default Item;
 
 
 
