@@ -1,3 +1,4 @@
+/* eslint-disable no-octal-escape */
 /* eslint-disable no-unused-vars */
 import "./Home.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
