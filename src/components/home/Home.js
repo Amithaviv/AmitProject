@@ -10,7 +10,6 @@ function Home() {
           <div className="card h-100" id="imgHeight">
             <Link type="button" to="/Item">
               <img
-                // eslint-disable-next-line no-octal-escape
                 src="images\3a61cda0-55c9-4b5a-9d76-03041730172a.jpg"
                 className="card-img-top"
                 alt="Chocolate Chip Cookie"
