@@ -57,7 +57,6 @@ function App() {
                 className="card-img-top" alt="Chocolate Chip Cookie"></img>
                 <div className="card-body"><h5 className="card-title">Chocolate Chip Cookies<br></br><br></br>price: 5$</h5>
                 </div>
-
               </div>
             </div>
             <div type="button" className="col">
@@ -84,3 +83,5 @@ function App() {
 }
 
 export default App;
+
+
