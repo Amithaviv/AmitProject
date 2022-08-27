@@ -4,6 +4,7 @@ import Item from "./components/item/Item";
 import Login from "./components/login/Login";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
+import Register from "./components/register/Register";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -93,6 +94,9 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<Item />} path="/Item"></Route>
+          </Routes>
+          <Routes>
+            <Route element={<Register />} path="/Register"></Route>
           </Routes>
         </div>
       </Router>
