@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
-//import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -131,7 +131,9 @@ function Login() {
             <Button type="submit">Login</Button>
           </div>
           <div id="register">
+          <Link to="/Register">
           <Button variant="info">Register here</Button>
+          </Link>
           </div>
         </Form>
       </header>

@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
-//import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Register() {
@@ -133,7 +133,9 @@ function Register() {
             <Button type="submit">Register</Button>
           </div>
           <div id="register">
+          <Link to="/Login">
             <Button variant="info">Login</Button>
+            </Link>
           </div>
         </Form>
       </header>
