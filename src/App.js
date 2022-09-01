@@ -7,6 +7,7 @@ import Home from "./components/home/Home";
 import Register from "./components/register/Register";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { useState } from "react";
+import Categories from "./components/categories/Categories";
 
 function App() {
   return (
@@ -62,9 +63,9 @@ function App() {
                 </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/.../App.js/">
+              <Link type="button" class="nav-link active" to="/Categories">
                   Categories
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/.../App.js/">
@@ -97,6 +98,9 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<Register />} path="/Register"></Route>
+          </Routes>
+          <Routes>
+            <Route element={<Categories />} path="/Categories"></Route>
           </Routes>
         </div>
       </Router>
