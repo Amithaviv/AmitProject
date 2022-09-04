@@ -4,6 +4,7 @@ import Item from "./components/item/Item";
 import Login from "./components/login/Login";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
+import Contact from "./components/contact/Contact";
 import Register from "./components/register/Register";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { useState } from "react";
@@ -68,9 +69,9 @@ function App() {
                 </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/.../App.js/">
+              <Link type="button" class="nav-link active" to="/Contact">
                   Contact us
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
                 <Link type="button" class="nav-link active" to="/About">
@@ -101,6 +102,9 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<Categories />} path="/Categories"></Route>
+          </Routes>
+          <Routes>
+            <Route element={<Contact />} path="/Contact"></Route>
           </Routes>
         </div>
       </Router>

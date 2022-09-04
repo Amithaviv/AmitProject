@@ -1,0 +1,29 @@
+#form{
+    border-style: solid;
+    font-size: 2rem;
+    color: black;
+    position: relative;
+    width: 45%;
+    height: 400px;
+    margin-top: 5%;
+    margin-left: 25%;
+    background-color:skyblue;
+    font-family:cursive;
+    color:black;
+    border-color:blanchedalmond;
+}
+#bold{
+    font-weight: 700;
+}
+@media screen and (max-width: 400px) {
+    #form {
+      width: 65%;
+      margin-left: 20%;
+    }
+  }
+  @media screen and (max-width: 300px) {
+    #form {
+      width: 75%;
+      margin-left: 15%;
+    }
+  }
