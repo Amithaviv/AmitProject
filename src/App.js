@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import Categories from "./components/categories/Categories";
 import { getUsers } from "./DAL/serverFunctions";
 import { getProducts } from "./DAL/serverFunctions";
+
 function App() {
   getUsers() //check to get users data
   getProducts() //check to get products data

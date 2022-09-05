@@ -4,12 +4,13 @@
     console.log(customers);
   }
   getUsers()
-  
-  export async function getProducts() {
-    let products = await fetch("http://localhost:3100/products/session",{credentials:"include"});
-    products = await products.json();
-    console.log(products);
-  }
-  getProducts()
+
+
+  export function getProducts() {
+    return fetch("http://localhost:3100/products/session",{credentials:"include"})
+        .then(response => response.json())
+        .then(products => (products))
+}
+
 
 
