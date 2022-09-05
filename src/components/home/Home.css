@@ -68,7 +68,10 @@ body{
     justify-content: center;
 }
 #imgHeight{
-    height: 60%;
+    height: 240px;
+}
+#cardHeight{
+    min-height:380px;
 }
 @media (max-width:835){
     *{
