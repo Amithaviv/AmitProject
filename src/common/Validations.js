@@ -21,9 +21,9 @@ console.log(getUsers())
         }
     }
 
-    if(validations.adressMinLength){
-        if (value.length < 10) {
-            errors.push([`${name} should be no less than 10 characters`])
+    if(validations.passwordMinLength){
+        if (value.length < 5) {
+            errors.push([`${name} should be no less than 5 characters`])
         }
     }
 

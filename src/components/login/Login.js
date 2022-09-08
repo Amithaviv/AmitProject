@@ -5,34 +5,19 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { InputGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
 import { Link } from "react-router-dom";
-import { getUsers } from "../.././DAL/serverFunctions";
+//import { getUsers } from "../.././DAL/serverFunctions";
 
 function Login() {
-  const [customers, setCustomers] = useState([])
-
-  useEffect(() => {
-    async function getData() {
-      setCustomers(await getUsers())
-    }
-    getData()
-  }, [])
-  var result = customers.find(obj => {
-    return obj.userName === "amit"
-  })
-
-  console.log(result);
-
   const [formData, setFormData] = useState({
     username: {
       value: "",
       validations: {
         required: true,
         usernameMinLength: 2,
-        usernameOnDatabase: true,
       },
       errors: [],
     },
@@ -44,11 +29,11 @@ function Login() {
       },
       errors: [],
     },
-    adress: {
+    password: {
       value: "",
       validations: {
         required: true,
-        adressMinLength: 10,
+        passwordMinLength: 10,
       },
       errors: [],
     },
@@ -78,7 +63,6 @@ function Login() {
     }
     setFormData({ ...formData });
   };
-  
 
   return (
     <div className="App">
@@ -134,13 +118,13 @@ function Login() {
                 </InputGroup.Text>
                 <Form.Control
                   type="text"
-                  name="adress"
+                  name="password"
                   placeholder="password"
-                  defaultValue={formData.adress.value}
+                  defaultValue={formData.password.value}
                   onBlur={validtateData}
                 />
               </InputGroup>
-              <ErrorMessages errors={formData.adress.errors}></ErrorMessages>
+              <ErrorMessages errors={formData.password.errors}></ErrorMessages>
             </Form.Group>
           </Row>
           <div id="submit" className="d-grid gap-2">
