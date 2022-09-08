@@ -28,11 +28,11 @@ function Register() {
       },
       errors: [],
     },
-    adress: {
+    password: {
       value: "",
       validations: {
         required: true,
-        adressMinLength: 10,
+        passwordMinLength: 10,
       },
       errors: [],
     },
@@ -56,11 +56,21 @@ function Register() {
         tryError += 1;
       }
     }
+    const data1 = {email:formData.email.value,name:formData.username.value,password:formData.password.value};
     console.log(tryError);
     if (tryError === 0) {
       alert("Register Confirmed");
     }
     setFormData({ ...formData });
+  //post req
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data1)
+};
+fetch('http://localhost:3100/api/customer/addCustomer', requestOptions,{credentials:"include"})
+    .then(response => response.json())
+    .then(data => (data));
   };
 
 
@@ -118,13 +128,13 @@ function Register() {
                 </InputGroup.Text>
                 <Form.Control
                   type="text"
-                  name="adress"
+                  name="password"
                   placeholder="password"
-                  defaultValue={formData.adress.value}
+                  defaultValue={formData.password.value}
                   onBlur={validtateData}
                 />
               </InputGroup>
-              <ErrorMessages errors={formData.adress.errors}></ErrorMessages>
+              <ErrorMessages errors={formData.password.errors}></ErrorMessages>
             </Form.Group>
           </Row>
 
