@@ -56,22 +56,31 @@ function Register() {
         tryError += 1;
       }
     }
-    const data1 = {email:formData.email.value,name:formData.username.value,password:formData.password.value};
-    console.log(tryError);
-    if (tryError === 0) {
-      alert("Register Confirmed");
-    }
-    setFormData({ ...formData });
+    const registerData = {email:formData.email.value,name:formData.username.value,password:formData.password.value};
+    // console.log(tryError);
+
   //post req
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data1)
+    body: JSON.stringify(registerData),
+    credentials:"include"
 };
-fetch('http://localhost:3100/api/customer/addCustomer', requestOptions,{credentials:"include"})
+  let valid=true;
+  if (tryError === 0){
+    fetch('http://localhost:3100/api/customer/registerAddCustomer', requestOptions,{credentials:"include"})
     .then(response => response.json())
-    .then(data => (data));
-  };
+    .then(data => (data))
+    .then(data => {if(data.hasOwnProperty('message')){
+      valid=false;
+    }
+    if (valid===true) {
+      alert("Register Confirmed");
+    }
+    })
+  //end of request
+  }
+    setFormData({ ...formData });};
 
 
   return (
