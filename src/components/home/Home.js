@@ -16,7 +16,6 @@ function Home() {
     }
     getData()
   }, [])
-
   return (
     <div className="App">
       <div id="cards" className="row row-cols-1 row-cols-sm-6 g-4">

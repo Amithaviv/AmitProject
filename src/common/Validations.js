@@ -1,4 +1,7 @@
+import { getUsers } from ".././DAL/serverFunctions";
+
 export const validate = (name, value, validations) => {
+console.log(getUsers())
     let errors = []
     if(validations.required){
         if (value.length === 0) {
@@ -7,6 +10,12 @@ export const validate = (name, value, validations) => {
     }
 
     if(validations.usernameMinLength){
+        if (value.length < 2) {
+            errors.push([`${name} should be no less than 2 characters`])
+        }
+    }
+
+    if(validations.usernameOnDatabase){
         if (value.length < 2) {
             errors.push([`${name} should be no less than 2 characters`])
         }
