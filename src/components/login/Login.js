@@ -5,18 +5,34 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { InputGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
 import { Link } from "react-router-dom";
+import { getUsers } from "../.././DAL/serverFunctions";
 
 function Login() {
+  const [customers, setCustomers] = useState([])
+
+  useEffect(() => {
+    async function getData() {
+      setCustomers(await getUsers())
+    }
+    getData()
+  }, [])
+  var result = customers.find(obj => {
+    return obj.userName === "amit"
+  })
+
+  console.log(result);
+
   const [formData, setFormData] = useState({
     username: {
       value: "",
       validations: {
         required: true,
         usernameMinLength: 2,
+        usernameOnDatabase: true,
       },
       errors: [],
     },

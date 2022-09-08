@@ -10,8 +10,7 @@ import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
 import { Link } from "react-router-dom";
 
-
-function Register() {
+function Register() {  
   const [formData, setFormData] = useState({
     username: {
       value: "",
