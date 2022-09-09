@@ -10,7 +10,10 @@ import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
 import { Link } from "react-router-dom";
 
-function Register() {  
+
+function Register({setUser}) {  
+  const [ShowErrText, setShowErrText] = useState(false);
+  const [ShowSuccessText, setShowSuccessText] = useState(false);
   const [formData, setFormData] = useState({
     username: {
       value: "",
@@ -58,8 +61,7 @@ function Register() {
     }
     const registerData = {email:formData.email.value,name:formData.username.value,password:formData.password.value};
     // console.log(tryError);
-
-  //post req
+    const registername = {name:formData.username.value}
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -73,9 +75,12 @@ function Register() {
     .then(data => (data))
     .then(data => {if(data.hasOwnProperty('message')){
       valid=false;
+      setShowErrText(true)
     }
     if (valid===true) {
-      alert("Register Confirmed");
+      setShowErrText(false)
+      setShowSuccessText(true)
+      setUser(`welcome, ${registername.name}`)
     }
     })
   //end of request
@@ -149,10 +154,10 @@ function Register() {
 
           <div id="submit" className="d-grid gap-2">
             <Button type="submit">Register</Button>
-          </div>
-          <div id="register">
-          <Link to="/Login">
-            <Button variant="info">Login</Button>
+            {ShowErrText ? <TextErr /> : null}
+            {ShowSuccessText ? <TextSuccess /> : null}
+            <Link to="/Login">
+            <Button variant="info">Login here</Button>
             </Link>
           </div>
         </Form>
@@ -160,4 +165,7 @@ function Register() {
     </div>
   );
 }
+const TextErr = () => <div id="emailTaken">Email is already taken please try again</div>;
+const TextSuccess = () => <div id="registerConfirmed">Register Confirmed</div>;
+
 export default Register;

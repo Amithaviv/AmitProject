@@ -1,0 +1,22 @@
+#image{
+height: 150px;
+width: 150px;
+margin-top: 10px;
+}
+.form{
+    border-style: solid;
+    font-size: 2rem;
+    color: black;
+    position: relative;
+    width: 35%;
+    height: 500px;
+    margin-top: 5%;
+    margin-left: 32%;
+    background-color:antiquewhite;
+    font-family:cursive;
+    color:black;
+    border-color:black;
+}
+#name{
+    color: black;
+}

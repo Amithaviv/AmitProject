@@ -129,9 +129,7 @@ function Login() {
           </Row>
           <div id="submit" className="d-grid gap-2">
             <Button type="submit">Login</Button>
-          </div>
-          <div id="register">
-          <Link to="/Register">
+            <Link to="/Register">
           <Button variant="info">Register here</Button>
           </Link>
           </div>

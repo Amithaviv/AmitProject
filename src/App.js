@@ -9,10 +9,10 @@ import Register from "./components/register/Register";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { useState } from "react";
 import Categories from "./components/categories/Categories";
-import { getUsers } from "./DAL/serverFunctions";
-import { getProducts } from "./DAL/serverFunctions";
+import Details from "./components/userDetails/userDetails"; 
 
 function App() {
+  const [user,setUser] = useState('Register/Login for identification')
   return (
     <div className="App">
       <Router>
@@ -43,12 +43,14 @@ function App() {
           <Link type="button" class="nav-link active" id="btnLogin" to="/Login">
             Register/Login
           </Link>
+          <Link to="/userDetails">
           <img
             type="button"
             id="accountImg"
             src="https://www.pikpng.com/pngl/b/154-1540525_male-user-filled-icon-my-profile-icon-png.png"
             alt="Account Img"
           ></img>
+          </Link>
           <img
             id="cartImg"
             type="button"
@@ -100,13 +102,16 @@ function App() {
             <Route element={<Item />} path="/Item"></Route>
           </Routes>
           <Routes>
-            <Route element={<Register />} path="/Register"></Route>
+            <Route element={<Register setUser={setUser}/>} path="/Register"></Route>
           </Routes>
           <Routes>
             <Route element={<Categories />} path="/Categories"></Route>
           </Routes>
           <Routes>
             <Route element={<Contact />} path="/Contact"></Route>
+          </Routes>
+          <Routes>
+            <Route element={<Details user={user}/>} path="/userDetails"></Route>
           </Routes>
         </div>
       </Router>
