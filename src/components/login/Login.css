@@ -64,3 +64,9 @@
     margin-bottom: 5%;
     color: black;
   }
+  #emailTaken{
+    color: red;
+  }
+  #registerConfirmed{
+    color: green;
+  }
