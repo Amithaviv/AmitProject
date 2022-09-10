@@ -6,7 +6,7 @@ import { getProducts } from "../.././DAL/serverFunctions";
 import { useState, useEffect } from "react";
 import SingleProduct from "./SingleProduct";
 
-function Home() {
+function Home({userId}) {
   // getProducts() //check to get products data
   const [products, setProducts] = useState([])
 
@@ -20,7 +20,7 @@ function Home() {
     <div className="App">
       <div id="cards" className="row row-cols-1 row-cols-sm-6 g-4">
     {
-      products.map(({name, price, image}, index) => <SingleProduct key={index} name={name} price={price} image={image}></SingleProduct> )
+      products.map(({name, price, image}, index) => <SingleProduct key={index} name={name} price={price} image={image} id={userId}></SingleProduct> )
     }
     </div>
     </div>

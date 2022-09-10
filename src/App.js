@@ -11,9 +11,11 @@ import React, { useState } from "react";
 import Categories from "./components/categories/Categories";
 import Details from "./components/userDetails/userDetails"; 
 import Cart from "./components/cart/Cart";
+import SingleProduct from "./components/home/SingleProduct";
 
 function App() {
   const [user,setUser] = useState('Register/Login for identification')
+  const [userId,setUserId] = useState('')
 
   return (
     <div className="App">
@@ -94,19 +96,19 @@ function App() {
             <Route element={<About />} path="/About"></Route>
           </Routes>
           <Routes>
-            <Route element={<Home />} path="/Home"></Route>
+            <Route element={<Home userId={userId}/>} path="/Home"></Route>
           </Routes>
           <Routes>
-            <Route element={<Home />} path="/"></Route>
+            <Route element={<Home userId={userId}/>} path="/"></Route>
           </Routes>
           <Routes>
-            <Route element={<Login setUser={setUser}/>} path="/Login"></Route>
+            <Route element={<Login setUserId={setUserId} setUser={setUser}/>} path="/Login"></Route>
           </Routes>
           <Routes>
             <Route element={<Item />} path="/Item"></Route>
           </Routes>
           <Routes>
-            <Route element={<Register setUser={setUser} />} path="/Register"></Route>
+            <Route element={<Register setUserId={setUserId} setUser={setUser} />} path="/Register"></Route>
           </Routes>
           <Routes>
             <Route element={<Categories />} path="/Categories"></Route>
@@ -118,7 +120,7 @@ function App() {
             <Route element={<Details user={user}/>} path="/userDetails"></Route>
           </Routes>
           <Routes>
-            <Route element={<Cart />} path="/cart"></Route>
+            <Route element={<Cart userId={userId}/>} path="/cart"></Route>
           </Routes>
         </div>
       </Router>

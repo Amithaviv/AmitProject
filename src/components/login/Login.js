@@ -11,7 +11,7 @@ import validate from "../../common/Validations";
 import { Link, Navigate } from "react-router-dom";
 //import { getUsers } from "../.././DAL/serverFunctions";
 
-function Login({setUser}) {
+function Login({setUser,setUserId}) {
   const [ShowErrText, setShowErrText] = useState(false);
   const [ShowSuccessText, setShowSuccessText] = useState(false);
   const [formData, setFormData] = useState({
@@ -78,9 +78,11 @@ if (tryError === 0){
     setShowErrText(true)
   }
   if (valid===true) {
+    console.log(data.id)
     setShowErrText(false)
     setShowSuccessText(true)
     setUser(`welcome, ${registername.name}`)
+    setUserId(data.id)
   }
   })
   };

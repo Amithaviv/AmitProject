@@ -10,7 +10,7 @@ import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
 import { Link, Navigate } from "react-router-dom";
 
-function Register({setUser}) {  
+function Register({setUser,setUserId}) {  
   const [ShowErrText, setShowErrText] = useState(false);
   const [ShowSuccessText, setShowSuccessText] = useState(false);
   const [formData, setFormData] = useState({
@@ -80,6 +80,7 @@ function Register({setUser}) {
       setShowErrText(false)
       setShowSuccessText(true)
       setUser(`welcome, ${registername.name}`)
+      setUserId(data.id)
     }
     })
   //end of request
