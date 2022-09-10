@@ -34,7 +34,7 @@ function SingleProduct(props) {
                 </div>
               </div>
               <button id="cartBtn" onClick={() => {updateMyArray([props.price, props.name,count]);
-              const cartData = {price:props.price*count,quantity:count,productName:props.name,customerId:1}
+              const cartData = {price:props.price*count,quantity:count,productName:props.name,customerId:props.id}
               const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

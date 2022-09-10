@@ -1,4 +1,5 @@
 
+
   export function getUsers() {
     return fetch("http://localhost:3100/customers/session",{credentials:"include"})
         .then(response => response.json())
