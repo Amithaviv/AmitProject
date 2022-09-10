@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 //import { getUsers } from "../.././DAL/serverFunctions";
 
 function Login({setUser}) {
@@ -153,6 +153,7 @@ if (tryError === 0){
             <Button type="submit">Login</Button>
             {ShowErrText ? <TextErr /> : null}
             {ShowSuccessText ? <TextSuccess /> : null}
+            {ShowSuccessText ? <Navigate to="/userDetails"/> : null}
             <Link to="/Register">
           <Button variant="info">Register here</Button>
           </Link>

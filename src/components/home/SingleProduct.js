@@ -33,8 +33,19 @@ function SingleProduct(props) {
                         <span class="plus bg-dark" onClick={() => setCount(count + 1)}>+</span>
                 </div>
               </div>
-              <button id="cartBtn" onClick={() => updateMyArray([props.price, props.name,count])}>Add to cart</button>
-              {console.log(myArray)}
+              <button id="cartBtn" onClick={() => {updateMyArray([props.price, props.name,count]);
+              const cartData = {price:props.price*count,quantity:count,productName:props.name,customerId:1}
+              const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cartData),
+                credentials:"include"
+            };
+            fetch('http://localhost:3100/api/orders/addCart', requestOptions,{credentials:"include"})
+            .then(response => response.json())
+            .then(data => console.log(data))
+
+              }}>Add to cart</button>
             </h5>
           </div>
           </div>
