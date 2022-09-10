@@ -2,8 +2,10 @@
 import "./Home.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useState } from "react";
+import Cart from "../cart/Cart";
 
 function SingleProduct(props) {
+  const [myArray, updateMyArray] = useState([]);
     const [count, setCount] = useState(0);
     if(count<0){
       setCount(count+1)
@@ -31,8 +33,8 @@ function SingleProduct(props) {
                         <span class="plus bg-dark" onClick={() => setCount(count + 1)}>+</span>
                 </div>
               </div>
-              <button id="cartBtn">Add to cart</button>
-
+              <button id="cartBtn" onClick={() => updateMyArray([props.price, props.name,count])}>Add to cart</button>
+              {console.log(myArray)}
             </h5>
           </div>
           </div>

@@ -10,9 +10,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import React, { useState } from "react";
 import Categories from "./components/categories/Categories";
 import Details from "./components/userDetails/userDetails"; 
+import Cart from "./components/cart/Cart";
 
 function App() {
   const [user,setUser] = useState('Register/Login for identification')
+
   return (
     <div className="App">
       <Router>
@@ -51,12 +53,14 @@ function App() {
             alt="Account Img"
           ></img>
           </Link>
+          <Link to="/cart">
           <img
             id="cartImg"
             type="button"
             src="https://static.thenounproject.com/png/1138102-200.png"
             alt="Cart Img"
           ></img>
+          </Link>
         </div>
 
         <nav id="navbar" class="navbar navbar-expand-sm bg-info navbar-dark">
@@ -102,7 +106,7 @@ function App() {
             <Route element={<Item />} path="/Item"></Route>
           </Routes>
           <Routes>
-            <Route element={<Register setUser={setUser}/>} path="/Register"></Route>
+            <Route element={<Register setUser={setUser} />} path="/Register"></Route>
           </Routes>
           <Routes>
             <Route element={<Categories />} path="/Categories"></Route>
@@ -112,6 +116,9 @@ function App() {
           </Routes>
           <Routes>
             <Route element={<Details user={user}/>} path="/userDetails"></Route>
+          </Routes>
+          <Routes>
+            <Route element={<Cart />} path="/cart"></Route>
           </Routes>
         </div>
       </Router>

@@ -11,7 +11,9 @@ import validate from "../../common/Validations";
 import { Link } from "react-router-dom";
 //import { getUsers } from "../.././DAL/serverFunctions";
 
-function Login() {
+function Login({setUser}) {
+  const [ShowErrText, setShowErrText] = useState(false);
+  const [ShowSuccessText, setShowSuccessText] = useState(false);
   const [formData, setFormData] = useState({
     username: {
       value: "",
@@ -57,12 +59,32 @@ function Login() {
         tryError += 1;
       }
     }
-    console.log(tryError);
-    if (tryError === 0) {
-      alert("Login Confirmed");
-    }
-    setFormData({ ...formData });
+    
+  const registerData = {email:formData.email.value,name:formData.username.value,password:formData.password.value};
+  const registername = {name:formData.username.value};
+    // console.log(tryError);
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(registerData),
+    credentials:"include"
   };
+  let valid=true;
+if (tryError === 0){
+  fetch('http://localhost:3100/api/customer/login', requestOptions,{credentials:"include"})
+  .then(response => response.json())
+  .then(data => {if(data?.hasOwnProperty('message')){
+    valid=false;
+    setShowErrText(true)
+  }
+  if (valid===true) {
+    setShowErrText(false)
+    setShowSuccessText(true)
+    setUser(`welcome, ${registername.name}`)
+  }
+  })
+  };
+  setFormData({ ...formData });}
 
   return (
     <div className="App">
@@ -129,6 +151,8 @@ function Login() {
           </Row>
           <div id="submit" className="d-grid gap-2">
             <Button type="submit">Login</Button>
+            {ShowErrText ? <TextErr /> : null}
+            {ShowSuccessText ? <TextSuccess /> : null}
             <Link to="/Register">
           <Button variant="info">Register here</Button>
           </Link>
@@ -138,4 +162,6 @@ function Login() {
     </div>
   );
 }
+const TextErr = () => <div id="emailTaken">Details are incorrect Please try again</div>;
+const TextSuccess = () => <div id="registerConfirmed">Login Confirmed</div>;
 export default Login;
