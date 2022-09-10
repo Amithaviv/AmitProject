@@ -3,15 +3,17 @@
     font-size: 2rem;
     color: black;
     position: relative;
-    width: 35%;
+    width: 55%;
     height: 500px;
     margin-top: 5%;
-    margin-left: 32%;
+    margin-left: 22%;
     background-color:white;
     font-family:cursive;
     color:black;
     border-color:black;
 }
-#products{
+
+#check{
     color: black;
+    font-weight: 400;
 }

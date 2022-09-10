@@ -8,8 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import ErrorMessages from "../../common/ErrorMessages";
 import validate from "../../common/Validations";
-import { Link } from "react-router-dom";
-
+import { Link, Navigate } from "react-router-dom";
 
 function Register({setUser}) {  
   const [ShowErrText, setShowErrText] = useState(false);
@@ -156,6 +155,7 @@ function Register({setUser}) {
             <Button type="submit">Register</Button>
             {ShowErrText ? <TextErr /> : null}
             {ShowSuccessText ? <TextSuccess /> : null}
+            {ShowSuccessText ? <Navigate to="/userDetails"/> : null}
             <Link to="/Login">
             <Button variant="info">Login here</Button>
             </Link>
