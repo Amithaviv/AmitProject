@@ -117,7 +117,7 @@ function App() {
             <Route element={<Contact />} path="/Contact"></Route>
           </Routes>
           <Routes>
-            <Route element={<Details user={user}/>} path="/userDetails"></Route>
+            <Route element={<Details user={user} userId={userId}/>} path="/userDetails"></Route>
           </Routes>
           <Routes>
             <Route element={<Cart userId={userId}/>} path="/cart"></Route>
