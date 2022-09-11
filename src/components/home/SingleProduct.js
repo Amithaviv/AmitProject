@@ -11,7 +11,7 @@ function SingleProduct(props) {
       setCount(count+1)
     }
   return (
-    <div className="App">
+    <div className="App single-product">
       <div type="button" className="col">
           <div className="card h-100" id="cardHeight">
             <Link type="button" to="/Item">
@@ -33,7 +33,7 @@ function SingleProduct(props) {
                         <span class="plus bg-dark" onClick={() => setCount(count + 1)}>+</span>
                 </div>
               </div>
-              <button id="cartBtn" onClick={() => {updateMyArray([props.price, props.name,count]);
+              <button id="cartBtn" onClick={() => {updateMyArray([props.price, props.name,count]);setCount(0);
               const cartData = {price:props.price*count,quantity:count,productName:props.name,customerId:props.id}
               const requestOptions = {
                 method: 'POST',
@@ -43,7 +43,7 @@ function SingleProduct(props) {
             };
             fetch('http://localhost:3100/api/orders/addCart', requestOptions,{credentials:"include"})
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => console.log(data));
 
               }}>Add to cart</button>
             </h5>

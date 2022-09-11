@@ -26,6 +26,7 @@ body{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #accountImg {
     width: 50px;
@@ -109,5 +110,8 @@ body{
     max-height: 50px;
     margin-top: 5px;
     background-color:antiquewhite;
+}
+.single-product {
+    margin: 2rem
 }
 

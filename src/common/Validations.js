@@ -30,7 +30,7 @@ console.log(getUsers())
     if(validations.pattern){
         const mailFormat = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
         if (!value.match(mailFormat)) {
-            errors.push([`${name} should be no less than 10 characters`])
+            errors.push([`${name} is not valid`])
         }
     }
 

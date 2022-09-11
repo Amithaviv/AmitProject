@@ -35,14 +35,14 @@ const [orders, setOrders] = useState([])
     return (
         <div>
       <li id="check" key={order.id} >
-        Product:{order.productName} Quantity:{order.quantity} price:{order.price}
+        Product:{order.productName} Quantity:{order.quantity} price:{order.price}$
       </li>
      <span {...totalPrice+=order.price}></span>
       </div>
     )
   })}
   <br></br>
-       <div>Your Cart Total price is: {totalPrice}</div> 
+       <div>Your Cart Total price is: {totalPrice}$</div> 
        <Button size="lg" variant="success">Order</Button >
        <br></br>
        <Button size="lg" variant="danger">Clear Cart</Button >
