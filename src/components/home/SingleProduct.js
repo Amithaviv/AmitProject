@@ -41,11 +41,12 @@ function SingleProduct(props) {
                 body: JSON.stringify(cartData),
                 credentials:"include"
             };
+            if (count>0){
             fetch('http://localhost:3100/api/orders/addCart', requestOptions,{credentials:"include"})
             .then(response => response.json())
             .then(data => console.log(data));
 
-              }}>Add to cart</button>
+              }}}>Add to cart</button>
             </h5>
           </div>
           </div>
